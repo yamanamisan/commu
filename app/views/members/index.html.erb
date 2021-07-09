@@ -1,0 +1,44 @@
+<% @page_title = "メンバー 一覧" %>
+<h1><%= @page_title %></h1>
+
+<%= form_tag :search_members, method: :get, class: "search" do %>
+ <%= text_field_tag "q", params[:q] %>
+ <%= submit_tag "検索"%>
+<% end %>
+
+<div class="toolbar">
+  <% if current_member.administrator  %>
+  <%= link_to "新規登録はこちらから", :new_member %>
+　<% end %>
+</div>
+
+<% if @members.present? %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th>学部</th>
+        <th>ユーザーID</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @members.each do |member| %>
+        <tr>
+          <td style="text-align: center"><%= member.department %></td>
+          <td><%= link_to member.name, member %></td>
+          <td>
+            <% if current_member.administrator  %>
+            <%= link_to "編集", [:edit, member] %> |
+            <%= link_to "削除", member, method: :delete,
+              data: { confirm: "本当に削除しますか?" } %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+   <%= paginate @members %>
+<% else %>
+  <p>会員情報がありません。</p>
+<% end %>

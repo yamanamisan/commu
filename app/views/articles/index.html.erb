@@ -1,0 +1,16 @@
+<div class="wrapper wrapper__bg">
+ <div class="container">
+    <h1>掲示板</h1>
+   <p>※スレッドの作成、閲覧、コメントの書き込みは<br>　無料のメンバー登録が必要です。</p>
+   <%= link_to "スレッド新規作成", new_article_path %>
+   <br>
+   <%= link_to "<広告掲載欄>ここに広告を掲載しませんか!?<詳しくはリンク先から>", :root %>
+   <hr>
+      <div class="panel">
+     <% @articles.each do |article| %>
+     <%= link_to article.title, article_path(article) %> </br>
+     <% end %>
+     <%= paginate @articles %>
+    </div>
+  </div>
+</div>

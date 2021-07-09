@@ -1,0 +1,21 @@
+<table class="attr">
+  <tr>
+    <th width="150">ユーザID</th>
+    <td><%= @member.name %></td>
+  </tr>
+  <tr>
+    <th>学部</th>
+    <td><%= @member.department %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td><%= @member.sex == 1 ? "男" : "女" %></td>
+  </tr>
+
+  <% if current_member.administrator  %>
+  <tr>
+    <th>管理者</th>
+    <td><%= @member.administrator? ? "○" : "－" %></td>
+  </tr>
+  <% end %>
+</table>

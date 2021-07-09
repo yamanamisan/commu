@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      member: 会員情報
+      article: スレッド
+      comment: コメント
+    attributes:
+      member:
+        name: ユーザー名
+        department: 学部
+        sex: 性別
+        sex_1: 男
+        sex_2: 女
+        email: メールアドレス
+        administrator: 管理者
+        current_password: 現在のパスワード
+        password: 新しいパスワード
+        password_confirmation: 新しいパスワードの確認
+    article:
+        title: タイトル
+        body: 本文
+    comment:
+        name: 名前
+        content: コメント
+    errors:
+      messages:
+        invalid_member_name: は半角小文字英数字・ひらがな・カタカナ・漢字で入力してください。
+        wrong: が正しくありません。

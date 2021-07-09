@@ -1,0 +1,41 @@
+<%= render "shared/errors" , obj: @member %>
+<table class="attr">
+  <tr>
+    <th><%= form.label :name %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <tr>
+      <th><%= form.label :department %></th>
+      <td><%= form.select :department, Member.departments.keys, {},{class: 'hoge'} %></td>
+    </tr>
+  <tr>
+  <tr>
+    <th><%= Member.human_attribute_name(:sex) %></th>
+    <td>
+      <%= form.radio_button :sex, 1 %>
+      <%= form.label :sex_1 %>
+      <%= form.radio_button :sex, 2 %>
+      <%= form.label :sex_2 %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :email %></th>
+    <td><%= form.text_field :email %></td>
+  </tr>
+  <% if @member.new_record? %>
+  <tr>
+    <th><%= form.label :password, "パスワード" %></th>
+    <td><%= form.text_field :password %></td>
+  </tr>
+<% end %>
+  <% if controller.kind_of?(MembersController) %>
+ <tr>
+  <th><%= Member.human_attribute_name(:administrator) %></th>
+  <td>
+    <%= form.check_box :administrator, disabled: !current_member.administrator? %>
+    <%= form.label :administrator %>
+  </td>
+ </tr>
+<% end %>
+</table>

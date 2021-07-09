@@ -1,0 +1,13 @@
+<%= link_to "スレッド一覧に戻る", articles_path %>
+<hr>
+<h1>スレッド新規作成</h1>
+<% if @article.errors.any? %>
+  <%= @article.errors.full_messages %>
+<% end %>
+<%= form_for @article do |f| %>
+名前(表示されません。)<br>
+<%= f.text_field :editor ,class: "textline",value: "名無しさん"%> <br>
+タイトル<br>
+<%= f.text_field :title ,class: "textline"%> <br>
+ <div><%= f.submit %></div>
+<% end %>

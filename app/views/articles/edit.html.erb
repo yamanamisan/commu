@@ -1,0 +1,11 @@
+<%= link_to @article.title,  article_path(@article)  %>
+<hr>
+<% if @article.errors.any? %>
+ <%= @article.errors.full_messages %>
+<% end %>
+<h1>Boards#edit</h1>
+<%= form_for @article do |f| %>
+名前　　: <%= f.text_field :editor %> <br>
+タイトル: <%= f.text_field :title %> <br>
+ <%= submit_tag %>
+<% end %>

@@ -1,0 +1,314 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+   *= require normalize-rails
+ *= require_tree .
+ *= require_self
+ */
+
+
+ /* ページ全体 */
+ body {
+   background-color: rgba(241, 226, 190, 0.01);
+   color:  #432;
+   margin: 0; padding: 0;
+   font-family: Meiryo, sans-serif;
+ }
+
+ /* リンク */
+ a:link { color: #00c; }
+ a:visited { color: #00c; }
+ a:hover { color: #f00; }
+ a img { border: none; }
+
+ /* ブロック要素 */
+ p, h1, h2, h3, table, ul {
+   margin: 0 0 0.5em;
+ }
+
+ /* ナビゲーション */
+ nav ul,
+ ul.toolbar,
+ ul.links {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+ }
+
+ nav ul li,
+ div.toolbar li,
+ ul.toolbar li,
+ ul.links li {
+   display: inline;
+ }
+
+ul.account-menu{
+  list-style: none;
+}
+ /* 全体の枠 */
+ div#container {
+   margin: 0 auto;
+   padding: 5px 0 0 0;
+   width: 780px;
+ }
+
+ /* 左の枠（コンテンツを入れる） */
+ main {
+   background-color: rgba(241, 226, 190, 0.03);
+   float: left;
+   width: 530px;
+   padding: 10px 10px 10px 0;
+ }
+
+ /* 右の枠（サイドバーを入れる） */
+ aside#sidebar {
+   float: left;
+   width: 230px;
+   /*background-color: rgba(148, 198, 116, 0.3);*/
+   padding: 0px,0,0,2px;
+   font-size: 86%;
+   margin-top: 20px;
+ }
+
+
+ /* ヘッダー */
+ header {
+   border-top: 3px solid #c9ffbf;
+   padding-top: 0px;
+   /*background-image: linear-gradient(#c9ffbf,#ffafbd);*/
+   background-image: linear-gradient(#c9ffbf,#ffafbd);
+ }
+
+ ul.account-menu {
+   text-align: right;
+ }
+
+ /* フッター */
+ footer {
+   clear: both;
+   font: 11px Verdana;
+   color: #888;
+   padding: 8px 0;
+   border-top: 5px solid #432;
+   text-align: center;
+ }
+
+ footer nav ul li:not(:last-child):after {
+   color: #888;
+   content: " | ";
+   margin: 0 5px;
+ }
+
+ /* メニューバー */
+ nav.menubar {
+   padding: 0px;
+   /*background-color: #000;*/
+   color:  #904644;
+   font-size: 80%;
+   padding: 8px 16px;
+ }
+
+ nav.menubar ul li:not(:last-child):after {
+   color:  #904644;
+   content: " | ";
+   margin: 0 2px;
+ }
+
+ /* メニューバーのリンク */
+ nav.menubar a { text-decoration: none; }
+
+ /* メニューバーのリンク（未訪問） */
+ nav.menubar a:link { color:  #432; }
+
+ /* メニューバーのリンク（訪問済） */
+ nav.menubar a:visited { color:  #432; }
+
+ /* メニューバーのリンク（マウスを合わせたとき） */
+ nav.menubar a:hover {
+   color: #f88;
+   text-decoration: underline;
+ }
+
+ /* メニューバーのリンク（現在のページ） */
+ nav.menubar span {
+   color: #ff8;
+   font-weight: bold;
+ }
+
+ /* メインコンテンツ */
+ main h1 {
+   color: rgba(68, 51, 34, 1);
+   font-weight: normal;
+   font-size: 150%;
+   border-bottom: 2px solid rgba(68, 51, 34, 0.8);
+   margin-bottom: 0.5em;
+ }
+
+ main h2 {
+   color: #99d;
+   font-weight: bold;
+   font-size: 120%;
+   margin-bottom: 0.5em;
+   border-bottom: 1px solid #432;
+ }
+
+ main p {
+   font-size: 90%;
+   line-height: 1.5;
+ }
+
+ ul.toolbar,
+ div.toolbar {
+   padding: 15px 0;
+   font-size: 90%;
+   text-align: right;
+ }
+
+ ul.toolbar li:not(:last-child):after {
+   color: #888;
+   content: " | ";
+   margin: 0 2px;
+ }
+
+ /* サイドバー */
+ form#login-form {
+   padding: 3px,0,0,0;
+   margin: 3px,0,0,0;
+   font-size: 12px;
+ }
+
+ form#login-form div {
+   padding: 2px;
+   text-align: center;
+ }
+
+ form#login-form label {
+   display: inline-block;
+   width: 80px;
+   text-align: center;
+ }
+
+ form#login-form input[type="text"],
+ form#login-form input[type="password"] {
+   width: 120px;
+ }
+
+ aside#sidebar h2 {
+   color: #432;
+   font-weight: bold;
+   text-align: center;
+   border: 3px solid #600;
+   background-color: rgba(100,100,100,0.2);
+   margin-bottom: 0.5em;
+   padding-left: 0em;
+   font-size: 100%;
+ }
+
+ aside#sidebar div{
+   margin-bottom: 0.4em;
+   margin-right: : 0.4em;
+  padding-bottom: 0.8em;
+   border-bottom: 1px dotted #432;
+ }
+
+ aside#sidebar ul {
+   padding-left: 2em;
+   list-style-type: none;
+ }
+
+ aside#sidebar li {
+   margin-bottom: 0.3em;
+ }
+
+/* スレッド画面　*/
+ .panel {
+  background-color: #fff;
+  padding: 10px;
+
+ }
+
+ .comments {
+  .comment--heading {
+  &:hover {
+  background-color: #fee;
+  }
+  }
+
+
+  .comment-body {
+  padding: 0 0 10 40px;
+  }
+ }
+
+ .textline {
+     border: 1px solid rgba(68, 51, 34, 0.8);  /* 枠線 */
+     padding: 0.5em;          /* 内側の余白量 */
+     background-color: snow;  /* 背景色 */
+     width: 20em;             /* 横幅 */
+     font-size: 1em;          /* 文字サイズ */
+     line-height: 1.2;        /* 行の高さ */
+ }
+ .textlines {
+     border: 1px solid rgba(68, 51, 34, 0.8);  /* 枠線 */
+     padding: 0.5em;          /* 内側の余白量 */
+     background-color: snow;  /* 背景色 */
+     width: 30em;             /* 横幅 */
+     height: 120px;           /* 高さ */
+     font-size: 1em;          /* 文字サイズ */
+     line-height: 1.2;        /* 行の高さ */
+ }
+
+ p.comm{
+   /*background-image: linear-gradient(#c9ffbf,#ffafbd);*/
+   font-size: 1.1em;
+   margin: 0;
+ }
+
+ .new_comment{
+    padding: 0.5em;          /* 内側の余白量 */
+   border: 2px solid rgba(68, 51, 34, 0.8);  /* 枠線 */
+   background-color: #fff;
+ }
+
+div.comment{
+  background-color: #fff;
+  margin: 0 2px 0 2px;
+  padding: 1px 1px 0 1px;
+}
+
+div.container{
+  background-color: rgba(100, 255, 100, 0.2);
+  padding: 3px;
+  border: 2px solid rgba(50, 200, 50, 0.4);
+}
+
+p.uname{
+  color: rgba(0, 0, 255, 0.7);
+  font-size: 0.8em;
+}
+
+p.com{
+  margin: 0 0 2px 0;
+  font-size: 0.9em;
+  color: rgba(38, 21, 4, 1);
+}
+
+input.combutton{
+
+}
+
+h3.yama{
+  margin-top: 3px;
+  margin-left: 0px;
+  padding-left: 2px;
+  border-left:  8px  solid rgba(68, 51, 34, 0.8);
+}

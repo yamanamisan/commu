@@ -1,0 +1,9 @@
+<% @page_title = "メンバープロフィール" %>
+
+<h1><%= @page_title %></h1>
+
+<div class="toolbar">
+  <%= render "body" %>
+  <% if current_member.administrator  %>
+  <%= link_to "編集", [:edit, @member] %></div>
+  <% end %>
